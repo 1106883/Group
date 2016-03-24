@@ -29,7 +29,7 @@ if(isset($_SESSION['username'])){
         <div id="menu">
             <form action="results.php" method="post">
                 <ul>
-                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="home.php">Homepage</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
                     <li><a href="Search.php">Search</a></li>
