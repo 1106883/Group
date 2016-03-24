@@ -72,7 +72,13 @@
                                         <input type='password' name='password' id='password' maxlength='50'/><br><br>
 
                                         <section><input id='button' type='submit' name='Login' value='Login'></section>
-                                    ";} ?>
+                                    ";}
+                            else{
+                                echo "Logged in as: ".$_SESSION['username'];
+                                echo ' <form name="logout" action="logout.php" method="post">
+                            <input id="logoutButton" type="submit" type="submit" value="Log Out">
+                            </form>';
+                            }?>
                                     </fieldset>
                                 </form>
                             </section>
