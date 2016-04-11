@@ -17,7 +17,7 @@ try {
 
     $copy=$_GET['Delete'];
 
-    $sql = "DELETE * FROM owns WHERE copyID = '$copy'";
+    $sql = "DELETE FROM owns WHERE copyID = '$copy'";
 
 
     $conn->exec($sql);
