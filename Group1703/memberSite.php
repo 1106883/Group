@@ -57,7 +57,7 @@ if (!isset($_SESSION['username'])) {
                 </section>
 
 
-                <section class="grid-35" section id="content2">
+                <section class="grid-30"  id="content2">
                     <h3>Your Titles</h3>
                     <?php
 
