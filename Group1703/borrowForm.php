@@ -67,32 +67,9 @@
                     echo "Connection failed: " . $e->getMessage();
                 }
 
-                $query = "";
 
-                $title = $_POST['title'];
-                if (!isset($title)) {
-                    $title = $_POST['qsearch'];
-                        if (!isset($title)) {
-                            $title = '%';
-                        }
-                }
 
-                $platform = $_POST['platform'];
-                if (!isset($platform)) {
-                    $platform = '%';
-                }
-
-                $genre = $_POST['genre'];
-                if (!isset($genre)) {
-                    $genre = '%';
-                }
-
-                $year = $_POST['year'];
-                if (!isset($year)) {
-                    $year = '%';
-                }
-
-                $query = "SELECT * FROM gameCollection WHERE Title LIKE '%$title%' AND Platform Like '$platform' AND Genre Like '%$genre%' AND Year Like '%$year%' ORDER BY Title";
+                $query = "SELECT * FROM owns WHERE Title LIKE '%$title%'";
                 try {
                     $results = $conn->query($query);
 
@@ -104,12 +81,9 @@
                         echo "<th>Title</th><th>Platform</th><th>Genre</th><th>Year</th><th id='age'>Age Rating</th><th id='desc'>Description</th><th>Borrow</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["Title"] . "</td>";
-                            echo "<td>" . $row["Platform"] . "</td>";
-                            echo "<td>" . $row["Genre"] . "</td>";
-                            echo "<td>" . $row["Year"] . "</td>";
-                            echo "<td>" . $row["Age Rating"] . "</td>";
-                            echo "<td>" . $row["Description"] . "</td>";
+                            echo "<td>" . $row["gameID"] . "</td>";
+                            echo "<td>" . $row["studentID"] . "</td>";
+                            echo "<td>" . $row["copyID"] . "</td>";
                             echo "<td><form id='borrow' action='borrowForm.php' method='post'><input id='borrow' type='submit' name='Borrow' value='Borrow'></form></td>";
                         }
                         print "</table>\n";
@@ -130,5 +104,3 @@
 </div>
 </body>
 </html>
-
-
