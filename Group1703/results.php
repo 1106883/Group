@@ -111,7 +111,7 @@
                             echo "<td>" . $row["Year"] . "</td>";
                             echo "<td>" . $row["Age Rating"] . "</td>";
                             echo "<td>" . $row["Description"] . "</td>";
-                            echo "<td><form id='borrow' action='borrowForm.php?title= method='post'><input id='borrow' name='borrow' type='submit' value='Borrow'></form></td>";
+                            echo "<td><form id='borrow' action='borrowForm.php?title= method='post'><input id='borrow' name='borrow' type='submit' value='". $row["Title"] ."'></form></td>";
                         }
                         print "</table>\n";
                     }
