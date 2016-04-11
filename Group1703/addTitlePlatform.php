@@ -9,7 +9,7 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href=design.css"/>
+    <link rel="stylesheet" type="text/css" href="design.css"/>
 </head>
 
 <body>
