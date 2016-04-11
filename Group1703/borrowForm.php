@@ -69,7 +69,7 @@
 
 
 
-                $query = "SELECT * FROM owns WHERE Title LIKE '%$title%'";
+                $query = "SELECT * FROM owns INNER JOIN gameCollection WHERE owns.GameID = gameCollection.gameID AND gameCollection.Title LIKE '%$title%'";
                 try {
                     $results = $conn->query($query);
 
@@ -78,10 +78,10 @@
                     } else {
 
                         print "<table id='results'>\n";
-                        echo "<th>Title</th><th>Platform</th><th>Genre</th><th>Year</th><th id='age'>Age Rating</th><th id='desc'>Description</th><th>Borrow</th>";
+                        echo "<th>Game ID</th><th>Student ID</th><th>Copy ID</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["gameID"] . "</td>";
+                            echo "<td>" . $row["GameID"] . "</td>";
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
                             echo "<td><form id='borrow' action='borrowForm.php' method='post'><input id='borrow' type='submit' name='Borrow' value='Borrow'></form></td>";
