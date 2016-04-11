@@ -7,9 +7,9 @@ if (!isset($_SESSION['username'])) {
 
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/design.css"/>
+    <link rel="stylesheet" type="text/css" href="design.css"/>
     <link rel="stylesheet"
-          href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/unsemantic-grid-responsive-tablet.css">
+          href=unsemantic-grid-responsive-tablet.css">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/>
 </head>
 

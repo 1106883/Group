@@ -9,7 +9,7 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/design.css"/>
+    <link rel="stylesheet" type="text/css" href=design.css"/>
 </head>
 
 <body>
