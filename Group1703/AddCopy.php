@@ -35,7 +35,7 @@ try {    $conn = new PDO($dsn, $username, $password);
     $conn->exec($query);
 
 
-    header("Location:home.php");
+    header("Location:memberSite.php");
 
 
 
