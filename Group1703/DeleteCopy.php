@@ -15,11 +15,9 @@ try {
     $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $id=$_SESSION['username'];
-    $game=$row["GameID"];
+    $copy=$_GET['Delete'];
 
-
-    $sql = "DELETE FROM owns WHERE studentID LIKE $id AND gameID LIKE $game ";
+    $sql = "DELETE * FROM owns WHERE copyID = '$copy'";
 
 
     $conn->exec($sql);
