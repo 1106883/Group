@@ -1,6 +1,6 @@
 <? session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location:index.html");}
+    header("Location:home.php");}
 
 
 error_reporting(-1);

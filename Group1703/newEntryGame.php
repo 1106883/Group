@@ -1,7 +1,7 @@
 
 <? session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location:index.html");
+    header("Location:home.php");
 } ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ if (!isset($_SESSION['username'])) {
             <form action="results.php" method="post">
                 <ul>
                     <li><a href="home.php">Homepage</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="memberSite.php"></a>Profile</li>
                     <li><a href="#"></a></li>
                     <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input
