@@ -46,7 +46,7 @@
 session_destroy();
 
 
-header("Location:index.html");
+header("Location:home.php");
  }
             } catch (PDOException $e) {
                 echo "Connection failed: " . $e->getMessage();

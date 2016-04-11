@@ -25,7 +25,7 @@
             <form action="results.php" method="post">
                 <ul>
                     <li><a href="home.php">Homepage</a></li>
-                    <li><a href="memberSite.php"></a>Profile</li>
+                    <li><a href="memberSite.php">Profile</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="Search.php">Search</a></li>
                     <li>
