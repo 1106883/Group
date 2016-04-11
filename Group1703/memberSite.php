@@ -23,12 +23,12 @@ if (!isset($_SESSION['username'])) {
 
 
         <div id="menu">
-            <form action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/results.php" method="post">
+            <form action="results.php" method="post">
                 <ul>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/index.html">Homepage</a></li>
+                    <li><a href="index.html">Homepage</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/Search.php">Search</a></li>
+                    <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input
                             id="qsgo"
                             type="submit"
@@ -50,7 +50,7 @@ if (!isset($_SESSION['username'])) {
                         <h3>What would you like to do today?</h3>
 
                         <p><a href="#">Change Password</a></p>
-                        <form name="logout" action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/logout.php" method="post">
+                        <form name="logout" action="logout.php" method="post">
                             <input id="logoutButton" type="submit" type="submit" value="Log Out">
                         </form>
                     </article>

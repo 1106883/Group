@@ -23,15 +23,15 @@ if(!isset($_SESSION['username'])){
             <h1><strong><font size="20">GameShare RGU</font></strong></h1>
         </div>
         <div id="search">
-            <Form Name ="login" action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/login.php" method="post">
+            <Form Name ="login.php" method="post">
                 <? if(!isset($_SESSION['username'])){
                     echo '
                     <font size="-2"><label for="username">Username :</label><input id="username" name="username" type="text" size="-2"/><label for="Password">Password :</label><input id="password" name="password" type="password" size="-2"/></font><input class="form-submit" type="submit" value="Login" />
-                    <a id="register" href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/registerDetails.php">Not a member? Register.</a>
+                    <a id="register" href="registerDetails.php">Not a member? Register.</a>
                ';}
                 else{
                     echo "Logged in as: ".$_SESSION['username'];
-                    echo ' <form name="logout" action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/logout.php" method="post">
+                    echo ' <form name="logout" action="logout.php" method="post">
                             <input id="logoutButton" type="submit" type="submit" value="Log Out">
                             </form>';
                 }
@@ -41,12 +41,12 @@ if(!isset($_SESSION['username'])){
             </form>
         </div>
         <div id="menu">
-            <form action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/results.php" method="post">
+            <form action="results.php" method="post">
                 <ul>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/index.html">Homepage</a></li>
+                    <li><a href="home.php">Homepage</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/Search.php">Search</a></li>
+                    <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input id="qsgo" type="submit"  value="Go"></li>
                 </ul>
             </form>

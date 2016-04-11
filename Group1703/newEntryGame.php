@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/design.css"/>
+    <link rel="stylesheet" type="text/css" href="design.css"/>
     <link rel="stylesheet"
-          href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/unsemantic-grid-responsive-tablet.css">
+          href="unsemantic-grid-responsive-tablet.css">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/>
 </head>
 
@@ -24,12 +24,12 @@ if (!isset($_SESSION['username'])) {
 
 
         <div id="menu">
-            <form action="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/results.php" method="post">
+            <form action="results.php" method="post">
                 <ul>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/index.html">Homepage</a></li>
+                    <li><a href="home.php">Homepage</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
-                    <li><a href="../../../AzureTest-master%20(3)/AzureTest-master/Group1703/Search.php">Search</a></li>
+                    <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input
                             id="qsgo"
                             type="submit"

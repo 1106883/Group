@@ -156,8 +156,6 @@ ul {
 	color: #808080;
 }
 
-
-
 #page {
 	width: 910px;
 	color: #333333;
@@ -412,18 +410,4 @@ div#slider figure {
 	font-size: 0;
 	animation: 40s slidy infinite;
 }
-/* End of Home Page Sliding image CSS*/
-
-#leftAddGame{
-	text-align: center;
-	float: left;
-}
-
-
-#DropAddMenu{
-	text-align: center;
-}
-
-#NewGame{
-	text-align: center;
-}
+/* End of Home Page Sliding image CSS
