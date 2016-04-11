@@ -69,7 +69,7 @@
 
 
 
-                $query = "SELECT * FROM owns INNER JOIN gameCollection WHERE owns.GameID = gameCollection.gameID AND gameCollection.Title LIKE '%$title%'";
+                $query = "SELECT * FROM owns, gameCollection INNER JOIN gameCollection WHERE owns.GameID = gameCollection.gameID AND gameCollection.Title LIKE '%$title%'";
                 try {
                     $results = $conn->query($query);
 
@@ -81,7 +81,8 @@
                         echo "<th>Game ID</th><th>Student ID</th><th>Copy ID</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["GameID"] . "</td>";
+                            echo "<td>" . $row["Title"] . "</td>";
+                            echo "<td>" . $row['Platform'] . "</td>";
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
                             echo "<td><form id='borrow' action='borrowForm.php' method='post'><input id='borrow' type='submit' name='Borrow' value='Borrow'></form></td>";
