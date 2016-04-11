@@ -33,15 +33,10 @@ try {    $conn = new PDO($dsn, $username, $password);
 
 
     $conn->exec($query);
-    //$copy += 1;
 
 
+    header("Location:home.php");
 
-   /* $sql = "INSERT INTO owns (gameID, studentID, copyID, game_condition) VALUES ('$gameID','$id','$copy','$condition')";*/
-
-
-    //$conn->exec($sql);
-    echo "New record created successfully";
 
 
 
