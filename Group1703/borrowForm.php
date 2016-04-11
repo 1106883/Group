@@ -69,7 +69,7 @@
 
 
 
-                $query = "SELECT * FROM owns INNER JOIN gameCollection g ON owns.GameID = gameCollection.gameID WHERE gameCollection.Title LIKE '%$title%'";
+                $query = "SELECT gameCollection.title, gameCollection.platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%'";
                 try {
                     $results = $conn->query($query);
 
