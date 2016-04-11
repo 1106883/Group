@@ -61,8 +61,14 @@ ul {
 	padding: 0;
 	width: 640px;
 	float: left;
-
 }
+
+#content2 {
+	padding: 0;
+	float: right;
+}
+
+
 
 #footer {
 	padding: 40px 0 95px 0;

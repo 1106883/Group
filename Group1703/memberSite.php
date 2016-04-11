@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])) {
 
 
             <main class="grid container">
-                <section class="grid-65" section id="content1">
+                <section class="grid-50" section id="content1">
                     <article id="welcome">
                         <h2>Welcome Back <? echo $_SESSION['username']; ?></h2>
                         <h3>What would you like to do today?</h3>
