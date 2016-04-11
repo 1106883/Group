@@ -32,7 +32,7 @@ $password = "26ebeed0";
 
     $conn->exec($sql);
     echo "New record created successfully";
-    header("Location:AddCopy.php");
+    header("Location:DropDownAdd.php");
 
 
 
