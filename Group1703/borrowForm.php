@@ -67,7 +67,7 @@
                     echo "Connection failed: " . $e->getMessage();
                 }
 
-                $title = $_GET['title'];
+                $title = $_GET['borrow'];
 
 
                 $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%'";
