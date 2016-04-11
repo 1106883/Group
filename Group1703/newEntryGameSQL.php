@@ -32,7 +32,7 @@ try {
 
     $conn->exec($sql);
     echo "New record created successfully";
-    header("Location:ConfirmAdd.php");
+    header("Location:AddCopy.php");
 
 
 } catch (PDOException $e) {
