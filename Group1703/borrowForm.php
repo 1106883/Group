@@ -69,7 +69,7 @@
 
 
 
-                $query = "SELECT gameCollection.title, gameCollection.platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%'";
+                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%'";
                 try {
                     $results = $conn->query($query);
 
@@ -78,7 +78,7 @@
                     } else {
 
                         print "<table id='results'>\n";
-                        echo "<th>Game ID</th><th>Student ID</th><th>Copy ID</th>";
+                        echo "<th>Title</th><th>Platform</th><th>Student ID</th><th>Copy ID</th><th>Borrow</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
                             echo "<td>" . $row["Title"] . "</td>";
