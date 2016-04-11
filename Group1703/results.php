@@ -105,12 +105,13 @@
                         foreach ($results as $row) {
                             echo "<tr>";
                             echo "<td>" . $row["Title"] . "</td>";
+                            $row['Title']=$title;
                             echo "<td>" . $row["Platform"] . "</td>";
                             echo "<td>" . $row["Genre"] . "</td>";
                             echo "<td>" . $row["Year"] . "</td>";
                             echo "<td>" . $row["Age Rating"] . "</td>";
                             echo "<td>" . $row["Description"] . "</td>";
-                            echo "<td><form id='borrow' action='borrowForm.php' method='post'><input id='borrow' type='submit' name='Borrow' value='Borrow'></form></td>";
+                            echo "<td><form id='borrow' action='borrowForm.php?title='.$title.' method='post'><input id='borrow' type='submit' name='Borrow' value='Borrow'></form></td>";
                         }
                         print "</table>\n";
                     }
