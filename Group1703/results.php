@@ -110,7 +110,7 @@
                             echo "<td>" . $row["Year"] . "</td>";
                             echo "<td>" . $row["Age Rating"] . "</td>";
                             echo "<td>" . $row["Description"] . "</td>";
-                            echo "<td><form id='borrow' action='borrowForm.php?title= method='post'><button id='borrow' name='borrow' type='submit' value='".$row['Title']."'>Borrow</form></td>";
+                            echo "<td><form id='borrow' action='borrowForm.php?title= method='post'><button id='borrow' name='borrow' value='".$row['Title']."'>Borrow</button></form></td>";
                         }
                         print "</table>\n";
                     }
