@@ -75,12 +75,10 @@
 
                     <tr>
                         <td><label for="Start Date">Start Date :</label></td>
-                        <td><input type="date" name="Start Date" value="Start"> Action<br>
-
+                        <td><input type="date" name="Start Date">
                     <tr>
                         <td><label for="End Date">End Date :</label></td>
-                        <td><input type="date" name="End Date" value="Start"> Action<br>
-
+                        <td><input type="date" name="End Date">
                     </tr>
 
                     <tr>
