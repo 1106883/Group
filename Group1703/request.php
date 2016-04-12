@@ -29,8 +29,30 @@
 
 
 
+                error_reporting(-1);
 
-                ?>
+                $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
+                $username = "b52b6c6935c6d2";
+                $password = "26ebeed0";
+                try {
+                    $conn = new PDO($dsn, $username, $password);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    $copy=$_GET['Borrow'];
+
+
+                    $sql = "SELECT * From owns Where copyID = $copy;
+                            INSERT INTO borrow(borrowerID, loanerID, gameID, copyID) VALUES (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy')";
+
+                    $conn->exec($sql);
+
+                } catch (PDOException $e) {
+                    echo "Connection failed: " . $e->getMessage();
+                }
+
+                $conn = null;
+            ?>
+
             </form>
         </div>
         <div id="menu">
@@ -49,65 +71,21 @@
     <div id="page">
         <div id="content">
             <table  style="width:300px" >
-                <form  name="search" Method ="post" action = "results.php">
-                    <tr>
-                        <td><label for="title">Title :</label></td>
-                        <td><input id="title" name="title" type="text"/></td>
-                    </tr>
-
+                <form  name="search" Method ="post" action = "confirm.php">
 
                     <tr>
-                        <td><label for="platform">Platform :</label></td>
-                        <td><select name='platform'>
-                                <option value="%">Select one</option>
-                                <option value="XBOX360">Xbox 360</option>
-                                <option value="XBOXONE">Xbox One</option>
-                                <option value="ps3">PS3</option>
-                                <option value="ps4">PS4</option>
-                                <option value="wii">Wii</option>
-                                <option value="Wii U">Wii U</option>
-                            </select></td>
+                        <td><label for="Start Date">Start Date :</label></td>
+                        <td><input type="date" name="Start Date" value="Start"> Action<br>
 
-                    </tr>
                     <tr>
-                        <td><label for="genre">Genre :</label></td>
-                        <td><input type="radio" name="genre" value="action"> Action<br>
-                            <input type="radio" name="genre" value="adventure"> Adventure <br>
-                            <input type="radio" name="genre" value="strategy"> Strategy<br>
-                            <input type="radio" name="genre" value="rpg"> RPG<br>
-                            <input type="radio" name="genre" value="sports"> Sports<br>
-                            <input type="radio" name="genre" value="horror"> Horror <br>
-                            <input type="radio" name="genre" value="simulation"> Simulation <br>
-                            <input type="radio" name="genre" value="fps"> FPS <br>
-                            <input type="radio" name="genre" value="hack n slash"> Hack n Slash <br>
-                            <input type="radio" name="genre" value="music"> Music <br>
-                            <input type="radio" name="genre" value="racing"> Racing <br>
-                            <input type="radio" name="genre" value="party"> Party <br>
-                            <input type="radio" name="genre" value="online"> Online <br>
-
-                    </tr>
-                    <tr>
-                        <td><label for="year"> Year :</label></td>
-                        <td><select name='year'>
-                                <option value="%">Select one</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                            </select></td>
+                        <td><label for="End Date">End Date :</label></td>
+                        <td><input type="date" name="End Date" value="Start"> Action<br>
 
                     </tr>
 
                     <tr>
                         <td colspan="2" align="center">
-                            <input type="submit"  value="Search">
+                            <input type="submit"  value="Request">
 
                         </td>
                     </tr>
