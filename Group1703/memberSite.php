@@ -107,7 +107,7 @@ if (!isset($_SESSION['username'])) {
                                     echo "<td>" . $row["Title"] . "</td>";
                                     echo "<td>" . $row["game_condition"] . "</td>";
                                     echo "<td>" . $row["copyID"] . "</td>";
-                                    echo "<td><form id='Delete'  action='DeleteCopy.php?copyID= method='post'>
+                                    echo "<td><form id='Delete' action='DeleteCopy.php?copyID= method='post'>
                                     <button id='Delete' name='Delete' value='".$row['copyID']."'>Delete</button></form></td>";
 
 
