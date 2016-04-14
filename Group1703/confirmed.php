@@ -11,8 +11,8 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $sql = "SELECT gameCollection.Title, owns.copyID, member.firstName, member.lastName, member.email
-            FROM gameCollection INNER JOIN owns ON owns.GameID = gameCollection.gameID INNER JOIN member ON owns.studentID = member.memberID";
+    $sql = "SELECT gameCollection.Title, owns.copyID, members.firstName, members.lastName, members.email
+            FROM gameCollection INNER JOIN owns ON owns.GameID = gameCollection.gameID INNER JOIN members ON owns.studentID = members.memberID";
 
     $result = $conn->exec($sql);
     foreach ($results as $row) {
