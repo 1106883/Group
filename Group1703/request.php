@@ -72,7 +72,9 @@
     </div>
     <div id="page">
         <div id="content">
+            <table  style="width:300px" >
 
+            </table>
         </div>
         <br class="clearfix" />
     </div>
