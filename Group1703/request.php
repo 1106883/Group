@@ -73,22 +73,9 @@
             ?>
 
             <table  style="width:300px" >
-                <form  name="search" Method ="post" action = "confirm.php">
-
-                    <tr>
-                        <td><label for="Start Date">Start Date :</label></td>
-                        <td><input type="date" name="Start Date">
-                    <tr>
-                        <td><label for="End Date">End Date :</label></td>
-                        <td><input type="date" name="End Date">
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" align="center">
-                            <input type="submit"  value="Confirm">
-
-                        </td>
-                    </tr>
+                <form  name="search" Method ="post" action = "confirmed.php">
+                    <p>Please click confirm if you are happy to borrow copy <?$copy?> from <?$sdate?> until <?$edate?></p>
+                    <input type="submit" name="Confirm" value="Confirm">
                 </form>
             </table>
         </div>

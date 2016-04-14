@@ -76,11 +76,6 @@ if (!isset($_SESSION['username'])) {
 
                     $user = $_SESSION['username'];
 
-                   /* $sql = "SELECT *
-                    FROM owns
-                    INNER JOIN gamecollection ON
-                    WHERE studentID LIKE $user;";*/
-
 
 
           $sql = "SELECT * FROM owns
