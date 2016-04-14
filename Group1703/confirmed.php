@@ -2,6 +2,9 @@
 if(!isset($_SESSION['username'])){
     header("Location:home.php");
 }
+//email to volunteer function
+function request_game()
+{
 
 try {
     $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
@@ -14,7 +17,7 @@ try {
     $sql = "SELECT gameCollection.Title, owns.copyID, members.firstName, members.lastName, members.email
             FROM gameCollection INNER JOIN owns ON owns.GameID = gameCollection.gameID INNER JOIN members ON owns.studentID = members.studentID";
 
-    $result = $conn->exec($sql);
+    $results = $conn->exec($sql);
     foreach ($results as $row) {
         $title = $row['Title'];
         $id = $row['copyID'];
@@ -43,6 +46,7 @@ try {
                     <td>'.$_SESSION['username'].'</td>
                 </table>
                 <br>Please contact the user using there RGU email which is: '.$_SESSION['username'].'@rgu.ac.uk.
+                <br>If you agree upon a loan, then please remember to update the availability of said game on your profile.
                 <br>Regards,<br>   GameShare
 
               ';
@@ -69,13 +73,15 @@ try {
             //Finally the mail is sent
             $result = $mailer->send($message);
 
-        //}
+
     }
 
 } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
-
+}
 
 }
+
+header("Location:memberSite.php");
 
 ?>
