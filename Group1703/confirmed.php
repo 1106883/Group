@@ -24,7 +24,7 @@ try {
         //function request_game()
         //{
 
-            $name = $firstName . " " . $lastname;
+            $name = $first . " " . $lastname;
 
             //email subject
             $subject = 'You have received a borrow request';
