@@ -81,7 +81,9 @@ try {
 }
 
 }
+echo $title;
+echo $id;
 
-header("Location:memberSite.php");
+//header("Location:memberSite.php");
 
 ?>
