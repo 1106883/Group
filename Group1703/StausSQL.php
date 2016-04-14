@@ -12,7 +12,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $status=$_POST['status'];
 
-    $sql = "UPDATE borrow SET status='$status'";
+    $sql = "UPDATE borrow SET status='$status' WHERE ";
     $conn->exec($sql);
 
 } catch (PDOException $e) {
