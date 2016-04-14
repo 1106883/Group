@@ -25,36 +25,7 @@
                     echo ' <form name="logout" action="logout.php" method="post">
                             <input id="logoutButton" type="submit" type="submit" value="Log Out">
                             </form>';
-                }
-
-
-
-                error_reporting(-1);
-
-                $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
-                $username = "b52b6c6935c6d2";
-                $password = "26ebeed0";
-                try {
-                    $conn = new PDO($dsn, $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                    $copy=$_GET['Borrow'];
-                    $sdate=$_POST['sdate'];
-                    $edate=$_POST['edate'];
-
-
-                    $sql = "SELECT * From owns Where copyID = $copy;
-                            INSERT INTO borrow(borrowerID, loanerID, gameID, copyID, start_date, end_date) VALUES (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy', '$sdate', '$edate')";
-
-                    $conn->exec($sql);
-
-                } catch (PDOException $e) {
-                    echo "Connection failed: " . $e->getMessage();
-                }
-
-                $conn = null;
-            ?>
-
+                }?>
             </form>
         </div>
         <div id="menu">
@@ -72,6 +43,35 @@
     </div>
     <div id="page">
         <div id="content">
+            <?
+
+            error_reporting(-1);
+
+            $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
+            $username = "b52b6c6935c6d2";
+            $password = "26ebeed0";
+            try {
+                $conn = new PDO($dsn, $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $copy=$_GET['Borrow'];
+                $sdate=$_POST['sdate'];
+                $edate=$_POST['edate'];
+
+
+                $sql = "INSERT INTO borrow(borrowerID, loaner gameID, copyID, start_date, end_date)
+                            SELECT * From owns (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy', '$sdate', '$edate')
+                            Where copyID = $copy ";
+
+                $conn->exec($sql);
+
+            } catch (PDOException $e) {
+                echo "Connection failed: " . $e->getMessage();
+            }
+
+            $conn = null;
+            ?>
+
             <table  style="width:300px" >
                 <form  name="search" Method ="post" action = "confirm.php">
 
