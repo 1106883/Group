@@ -60,8 +60,8 @@
 
 
                 $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date)
-                            SELECT * From owns (".$_SESSION['username'].", owns.studentID, owns.gameID, '$copy', '$sdate', '$edate')
-                            Where copyID = $copy ";
+                            SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate'
+                            From owns Where copyID = $copy ";
 
                 $conn->exec($sql);
 
