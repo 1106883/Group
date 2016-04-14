@@ -59,7 +59,7 @@
                 $edate=$_POST['edate'];
 
 
-                $sql = "INSERT INTO borrow(borrowerID, loaner gameID, copyID, start_date, end_date)
+                $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date)
                             SELECT * From owns (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy', '$sdate', '$edate')
                             Where copyID = $copy ";
 
