@@ -86,7 +86,7 @@
                             echo "<td>" . $row['Platform'] . "</td>";
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
-                            echo "<td><form id='borrow' action='request.php?title=".$row["Title"]."&stuid=".$row["studentID"]."&copy=".$row["copyID"]."' method='get'><button id='borrow' type='submit' name='Borrow' value=".$row["copyID"].">Request</button></form></td>";
+                            echo "<td><form id='borrow' action='request.php?copy=".$row["copyID"]."' method='get'><button id='borrow' type='submit' name='Borrow' value=".$row["copyID"].">Request</button></form></td>";
                         }
                         print "</table>\n";
                     }
