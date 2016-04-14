@@ -78,7 +78,7 @@
                         echo "no games found <br />";
                     } else {
 
-                        print "<table id='results'>\n";
+                        print "<table id='borrowTable'>\n";
                         echo "<th>Title</th><th>Platform</th><th>Student ID</th><th>Copy ID</th><th>Start Date</th><th>End Date</th><th>Borrow</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
@@ -86,7 +86,7 @@
                             echo "<td>" . $row['Platform'] . "</td>";
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
-                            echo "<td><form id='borrow' action='request.php?copy=".$row["copyID"]."' method='POST'></td>";
+                            echo "<form id='borrow' action='request.php?copy=".$row["copyID"]."' method='POST'>";
                             echo "<td><input type='text' placeholder='dd/mm/yyyy'></td>";
                             echo "<td><input type='text' placeholder='dd/mm/yyyy'></td>";
                             echo "<td><button id='Request' name='Borrow' value='".$row['copyID']."'>Request</button></form></td>";
