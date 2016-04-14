@@ -73,7 +73,23 @@
     <div id="page">
         <div id="content">
             <table  style="width:300px" >
+                <form  name="search" Method ="post" action = "confirm.php">
 
+                    <tr>
+                        <td><label for="Start Date">Start Date :</label></td>
+                        <td><input type="date" name="Start Date">
+                    <tr>
+                        <td><label for="End Date">End Date :</label></td>
+                        <td><input type="date" name="End Date">
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit"  value="Confirm">
+
+                        </td>
+                    </tr>
+                </form>
             </table>
         </div>
         <br class="clearfix" />
