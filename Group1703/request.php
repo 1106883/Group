@@ -74,7 +74,7 @@
 
             <table  style="width:300px" >
                 <form  name="search" Method ="post" action = "confirmed.php">
-                    <p>Please click confirm if you are happy to borrow copy <?$copy?> from <?$sdate?> until <?$edate?></p>
+                    <p>Please click confirm if you are happy to borrow copy</p>
                     <input type="submit" name="Confirm" value="Confirm">
                 </form>
             </table>
