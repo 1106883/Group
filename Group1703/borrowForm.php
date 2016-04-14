@@ -90,7 +90,7 @@ if(!isset($_SESSION['username'])){
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
                             echo "<form id='borrow' action='request.php?copy=".$row["copyID"]."' method='POST'>";
-                            echo "<td><input type='text' placeholder='yyyy-mm-dd' id='sdate' name='sdate' value='date('Y-m-d');'></td>";
+                            echo "<td><input type='text' placeholder='yyyy-mm-dd' id='sdate' name='sdate'></td>";
                             echo "<td><input type='text' placeholder='yyyy-mm-dd' id='edate' name='edate'></td>";
                             echo "<td><button id='Request' name='Borrow' value='".$row['copyID']."'>Request</button></form></td>";
 

@@ -12,7 +12,7 @@ try {
 
 
     $sql = "SELECT gameCollection.Title, owns.copyID, members.firstName, members.lastName, members.email
-            FROM gameCollection INNER JOIN owns ON owns.GameID = gameCollection.gameID INNER JOIN members ON owns.studentID = members.memberID";
+            FROM gameCollection INNER JOIN owns ON owns.GameID = gameCollection.gameID INNER JOIN members ON owns.studentID = members.studentID";
 
     $result = $conn->exec($sql);
     foreach ($results as $row) {
