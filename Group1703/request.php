@@ -63,8 +63,8 @@ if(!isset($_SESSION['username'])){
                 $edate=$_POST['edate'];
 
 
-                $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date)
-                            SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate'
+                $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date, status)
+                            SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate', 'Requested'
                             From owns Where copyID = $copy ";
 
                 $conn->exec($sql);
