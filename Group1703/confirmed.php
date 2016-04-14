@@ -4,6 +4,9 @@ if(!isset($_SESSION['username'])){
 }
 
 try {
+    $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
+    $username = "b52b6c6935c6d2";
+    $password = "26ebeed0";
     $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
