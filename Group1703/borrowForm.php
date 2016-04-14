@@ -87,8 +87,8 @@
                             echo "<td>" . $row["studentID"] . "</td>";
                             echo "<td>" . $row["copyID"] . "</td>";
                             echo "<form id='borrow' action='request.php?copy=".$row["copyID"]."' method='POST'>";
-                            echo "<td><input type='text' placeholder='dd/mm/yyyy'></td>";
-                            echo "<td><input type='text' placeholder='dd/mm/yyyy'></td>";
+                            echo "<td><input type='text' placeholder='dd/mm/yyyy' id='sdate' name='sdate'></td>";
+                            echo "<td><input type='text' placeholder='dd/mm/yyyy' id='edate' name='edate'></td>";
                             echo "<td><button id='Request' name='Borrow' value='".$row['copyID']."'>Request</button></form></td>";
 
                         }

@@ -39,10 +39,12 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     $copy=$_GET['Borrow'];
+                    $sdate=$_POST['sdate'];
+                    $edate=$_POST['edate'];
 
 
                     $sql = "SELECT * From owns Where copyID = $copy;
-                            INSERT INTO borrow(borrowerID, loanerID, gameID, copyID) VALUES (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy')";
+                            INSERT INTO borrow(borrowerID, loanerID, gameID, copyID, start_date, end_date) VALUES (".$SESSION['username'].", owns.studentID, owns.gameID, '$copy', '$sdate', '$edate')";
 
                     $conn->exec($sql);
 
@@ -70,25 +72,7 @@
     </div>
     <div id="page">
         <div id="content">
-            <table  style="width:300px" >
-                <form  name="search" Method ="post" action = "confirm.php">
 
-                    <tr>
-                        <td><label for="Start Date">Start Date :</label></td>
-                        <td><input type="date" name="Start Date">
-                    <tr>
-                        <td><label for="End Date">End Date :</label></td>
-                        <td><input type="date" name="End Date">
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" align="center">
-                            <input type="submit"  value="Request">
-
-                        </td>
-                    </tr>
-                </form>
-            </table>
         </div>
         <br class="clearfix" />
     </div>
