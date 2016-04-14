@@ -52,8 +52,8 @@ if(!isset($_SESSION['username'])){
         <div id="content">
 
             <main>
-                <?$copy=$_GET['UStatus'];?>
-                <form action='statusSQL.php?copy=<?$copy?>' name="status" id="status" method="post">
+                <?$copy=$_GET['UStatus'];
+                echo '<form action="statusSQL.php?copy='.$copy.'" name="status" id="status" method="post">' ?>
 
                     <select name="StatuselectDrop">
                         <option value="%">Select Status</option>
