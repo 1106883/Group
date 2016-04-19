@@ -10,7 +10,7 @@ $title=$_POST['postTitle'];
 $content=$_POST['postContent'];
 
 
-$sql = "INSERT INTO forum (postTitle, postContent) Values'$title','$content'";
+$sql = "INSERT INTO forum (postTitle, postContent) Values ('$title','$content')";
 
 $conn->exec($sql);
 
