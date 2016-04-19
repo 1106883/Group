@@ -42,8 +42,6 @@
     <div id="page">
         <div id="content">
 
-            <main>
-
                 <?
                 $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
                 $username = "b52b6c6935c6d2";
@@ -77,9 +75,6 @@
                  ?>
 
                 <a href="addPost.php">Add a new post</a>
-
-
-            </main>
 
 
         </div>
