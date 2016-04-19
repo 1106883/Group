@@ -57,7 +57,7 @@
 
                 $post=$_GET['post'];
 
-                $query = "SELECT * FROM forum where postTitle LIKE '$post'";
+                $query = "SELECT * FROM forum where postTitle = ".$post."";
                 try {
                     $results = $conn->query($query);
 
