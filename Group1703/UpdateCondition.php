@@ -52,13 +52,13 @@ if(!isset($_SESSION['username'])){
         <div id="content">
 
             <main>
-                <?$copy=$_GET['UStatus'];
-                echo '<form action="ConditionSQL.php?copy='.$copy.'" name="status" id="status" method="post">' ?>
+                <?$copy=$_GET['UCondition'];
+                echo '<form action="ConditionSQL.php?copy='.$copy.'" name="condition" id="condition" method="post">' ?>
 
-                    <input type="text" name="condition" id="condition" placeholder="Condition...">
+                    <input name="Ucondition" type="text" placeholder="Condition...">
 
                     <br><br>
-                    <input type="submit" value="Select">
+                    <input type="submit" value="Update">
 
 
                 </form>

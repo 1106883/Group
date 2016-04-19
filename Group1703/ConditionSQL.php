@@ -10,7 +10,7 @@ $password = "26ebeed0";
 $conn = new PDO($dsn, $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $condition=$_POST['condition'];
+    $condition=$_POST['Ucondition'];
     $copy=$_GET['copy'];
 
     $sql = "UPDATE owns SET game_condition='$condition' WHERE copyID = '$copy'";
