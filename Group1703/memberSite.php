@@ -94,7 +94,7 @@ if (!isset($_SESSION['username'])) {
 
 
                                 print "<table id='results'>\n";
-                                echo "<th>GameID</th><th>Game</th><th>Condition</th><th>Copy ID</th><th>Options</th>";
+                                echo "<th>GameID</th><th>Game</th><th>Condition</th><th>Copy ID</th><th>Loan Status</th><th>Options</th>";
                                 foreach ($results as $row) {
 
                                     echo "<tr>";
@@ -102,6 +102,7 @@ if (!isset($_SESSION['username'])) {
                                     echo "<td>" . $row["Title"] . "</td>";
                                     echo "<td>" . $row["game_condition"] . "</td>";
                                     echo "<td>" . $row["copyID"] . "</td>";
+                                    echo "<td>" . $row["status"] . "</td>";
                                     echo "<td>
                                     <form id='Delete' action='DeleteCopy.php?copyID= method='post'>
                                         <button id='Delete' name='Delete' value='".$row['copyID']."'>Delete</button></form>
