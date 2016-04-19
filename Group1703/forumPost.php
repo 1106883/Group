@@ -57,7 +57,7 @@
 
                 $post=$_get['post'];
 
-                $query = "SELECT * FROM forum where postTitle = $post ORDER BY postTitle";
+                $query = "SELECT * FROM forum where postTitle = '$post' ORDER BY postTitle";
                 try {
                     $results = $conn->query($query);
 
