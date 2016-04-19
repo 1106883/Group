@@ -10,10 +10,10 @@ $password = "26ebeed0";
 $conn = new PDO($dsn, $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $status=$_POST['status'];
+    $condition=$_POST['condition'];
     $copy=$_GET['copy'];
 
-    $sql = "UPDATE borrow SET status='$status' WHERE copyID = '$copy'";
+    $sql = "UPDATE owns SET condition='$condition' WHERE copyID = '$copy'";
     $conn->exec($sql);
 
 } catch (PDOException $e) {

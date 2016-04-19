@@ -107,6 +107,8 @@ if (!isset($_SESSION['username'])) {
                                         <button id='Delete' name='Delete' value='".$row['copyID']."'>Delete</button></form>
                                     <form id='Update Status' action='UpdateStatus.php?copyID= method='post'>
                                         <button id='UStatus' name='UStatus' value='".$row['copyID']."'>Update Status</button></form>
+                                    <form id='Update Condition' action='UpdateCondition.php?copyID= method='post'>
+                                        <button id='UCondition' name='UCondition' value='".$row['copyID']."'>Update Condition</button></form>
                                     </td>";
 
 
