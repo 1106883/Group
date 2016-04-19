@@ -13,7 +13,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $condition=$_POST['condition'];
     $copy=$_GET['copy'];
 
-    $sql = "UPDATE owns SET condition='$condition' WHERE copyID = '$copy'";
+    $sql = "UPDATE owns SET game_condition='$condition' WHERE copyID = '$copy'";
     $conn->exec($sql);
 
 } catch (PDOException $e) {
