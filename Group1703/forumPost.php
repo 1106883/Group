@@ -65,7 +65,7 @@
                         echo "No posts found <br />";
                     } else {
 
-                        print "<table id='postresults'>\n";
+                        print "<table id='results' width='60%'>\n";
                         foreach ($results as $row) {
                             echo "<th>".$row['postTitle']."</th>";
                             echo "<tr>";
