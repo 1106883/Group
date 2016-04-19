@@ -64,7 +64,7 @@ if(!isset($_SESSION['username'])){
 
 
                 $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date, status)
-                            SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate', 'Requested'
+                            SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate'
                             From owns Where copyID = $copy ";
 
                 $conn->exec($sql);
