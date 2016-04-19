@@ -57,7 +57,7 @@
 
                 $post=$_GET['post'];
 
-                $query = "SELECT * FROM forum where postTitle = ".$post."";
+                $query = "SELECT * FROM forum where postTitle = '$post'";
                 try {
                     $results = $conn->query($query);
 
@@ -69,7 +69,8 @@
                         foreach ($results as $row) {
                             echo "<th>".$row['postTitle']."</th>";
                             echo "<tr>";
-                            echo $row["postContent"]."</td></a>";
+                            echo $row["postContent"];
+                            echo "</td></a>";
                         }
                         print "</table>\n";
                     }
