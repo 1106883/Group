@@ -68,9 +68,9 @@
                         foreach ($results as $row) {
                         print "<table id='results' width='60%'>\n";
                             echo "<th>".$row['postTitle']."</th>";
-                            echo "<tr>";
+                            echo "<tr><td>";
                             echo $row["postContent"];
-                            echo "</td></a>";
+                            echo "</td></tr>";
                         }
                         print "</table>\n";
                     }
