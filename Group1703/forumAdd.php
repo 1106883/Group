@@ -53,6 +53,7 @@
                     <td><input id="postContent" name="postContent" type="text"/></td>
                 </tr>
                 </table>
+                    <input type="submit" vlaue="Post">
 
         </div>
         <br class="clearfix" />
