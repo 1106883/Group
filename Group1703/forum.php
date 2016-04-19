@@ -28,7 +28,6 @@
             </form>
         </div>
         <div id="menu">
-            <form action="results.php" method="post">
                 <ul>
                     <li><a href="home.php">Homepage</a></li>
                     <li><a href="memberSite.php">Profile</a></li>
@@ -44,6 +43,7 @@
         <div id="content">
 
             <main>
+
                 <?
                 $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
                 $username = "b52b6c6935c6d2";
