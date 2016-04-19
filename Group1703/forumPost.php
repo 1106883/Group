@@ -55,9 +55,9 @@
                     echo "Connection failed: " . $e->getMessage();
                 }
 
-                $post=$_get['post'];
+                $post=$_GET['post'];
 
-                $query = "SELECT * FROM forum where postTitle = '$post' ORDER BY postTitle";
+                $query = "SELECT * FROM forum where postTitle = $post";
                 try {
                     $results = $conn->query($query);
 
