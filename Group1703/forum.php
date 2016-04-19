@@ -74,7 +74,7 @@
                 }
                  ?>
 
-                <a href="addPost.php">Add a new post</a>
+                <a href="forumAdd.php">Add a new post</a>
 
 
         </div>
