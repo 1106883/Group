@@ -10,7 +10,7 @@ $password = "26ebeed0";
 $conn = new PDO($dsn, $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $status=$_POST['status'];
+    $status=$_POST['StatusSelectDrop'];
     $copy=$_GET['copy'];
 
     $sql = "UPDATE owns SET status='$status' WHERE copyID = '$copy'";
