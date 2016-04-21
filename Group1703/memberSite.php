@@ -130,7 +130,7 @@ if (!isset($_SESSION['username'])) {
                     <br><br><br><br><br><br>
                     <h3>Your Loans</h3>
                     <a href="memberLoans.php">Borrows</a>
-                    <a href="#">Lends</a>
+                    <a href="memberLends.php">Lends</a>
 
                 </section>
             </main>
