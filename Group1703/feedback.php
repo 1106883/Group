@@ -17,7 +17,7 @@ $feedback = (int)$_POST['feedbackRating'];
 
 $query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, borrow.borrowID, '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
 try {
-    $results = $conn->query($query);
+    $conn->exec($sql);
 
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
