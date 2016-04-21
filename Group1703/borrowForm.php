@@ -78,7 +78,7 @@ if(!isset($_SESSION['username'])){
                     $results = $conn->query($query);
 
                     if ($results->rowcount() == 0) {
-                        echo "no games found <br />";
+                        echo "We're sorry, but the game you have requested is currently on loan <br />";
                     } else {
 
                         print "<table id='borrowTable'>\n";
