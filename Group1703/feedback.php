@@ -11,11 +11,11 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-$bID = $_GET['borrowID'];
+$bid = $_GET['borrowID'];
 $feedback = (int)$_POST['feedbackRating'];
 
 
-$query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, '$bID', '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
+$query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, borrow.borrowID, '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
 try {
     $results = $conn->query($query);
 
