@@ -15,7 +15,7 @@ $bID = $_GET['feedback'];
 $feedback = $_GET['feedbackRating'];
 
 
-$query = "Select borrowerID FROM borrow WHERE borrow.borrowID = '$bID' Insert into feedback (borrowID, borrowerID, feedbackScore) Values ('$bID', borrowerID, '$feedback')";
+$query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, '$bID', borrowerID, '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
 try {
     $results = $conn->query($query);
 
