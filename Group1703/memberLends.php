@@ -56,7 +56,7 @@ if(!isset($_SESSION['username'])){
                 echo "Connection failed: " . $e->getMessage();
             }
 
-            $query = "SELECT borrowID, borrowerID, copyID, Title, start_date, end_date FROM borrow INNER JOIN gamecollection ON borrow.gameID = gamecollection.gameID WHERE borrowerID = ".$_SESSION["username"]." AND Now() < end_date ORDER BY end_date";
+            $query = "SELECT borrowID, borrowerID, copyID, Title, start_date, end_date FROM borrow INNER JOIN gamecollection ON borrow.gameID = gamecollection.gameID WHERE loanerID = ".$_SESSION["username"]." AND Now() < end_date ORDER BY end_date";
             try {
                 $results = $conn->query($query);
 
