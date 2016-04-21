@@ -11,11 +11,12 @@ try {
 
 $bid = $_GET['borrowID'];
 $feedback = (int)$_POST['feedbackRating'];
+$borrower = $_GET['borrowerID'];
 
 echo $bid." ".$feedback;
 
 
-$sql = "INSERT INTO feedback (borrowID, borrowerID, feedbackScore) SELECT borrowerID, borrowID, '$feedback' FROM borrow WHERE borrowID = '$bID'";
+$sql = "INSERT INTO feedback (borrowID, borrowerID, feedbackScore) VALUES ($bid, $borrower, $feedback)";
 $conn->exec($sql);
 
 
