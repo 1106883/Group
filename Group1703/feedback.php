@@ -12,7 +12,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 $bID = $_GET['borrowID'];
-$feedback = $_POST['feedbackRating'];
+$feedback = (int)$_POST['feedbackRating'];
 
 
 $query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, '$bID', '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
