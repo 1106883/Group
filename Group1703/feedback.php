@@ -11,7 +11,7 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-$bID = $_GET['feedback'];
+$bID = $_GET['borrowID'];
 $feedback = $_POST['feedbackRating'];
 
 
