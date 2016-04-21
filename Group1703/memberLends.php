@@ -75,11 +75,11 @@ if(!isset($_SESSION['username'])){
                         echo "<td>".$row["end_date"]."</td>";
                         echo "<td><form id='Feedback' action='feedback.php?borrowID=".$row["borrowID"]."' method='POST'>
                                         <select name='feedbackRating'>
-                                            <option value = 1> 1 </option>
-                                            <option value = 2> 2 </option>
-                                            <option value = 3> 3 </option>
-                                            <option value = 4> 4 </option>
-                                            <option value = 5> 5 </option>
+                                            <option value = '1'> 1 </option>
+                                            <option value = '2'> 2 </option>
+                                            <option value = '3'> 3 </option>
+                                            <option value = '4'> 4 </option>
+                                            <option value = '5'> 5 </option>
                                         </select>
                                         <button id='feedback' name='feedback' value='".$row["borrowID"]."'>Leave Feedback</button></form></td></tr>";
                     }
