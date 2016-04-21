@@ -56,7 +56,7 @@ if(!isset($_SESSION['username'])){
                 echo "Connection failed: " . $e->getMessage();
             }
 
-            $query = "SELECT borrowerID, copyID, Title, start_date, end_date FROM borrow INNER JOIN gamecollection ON borrow.gameID = gamecollection.gameID WHERE borrowerID = ".$_SESSION["username"]." ORDER BY end_date";
+            $query = "SELECT borrowID, borrowerID, copyID, Title, start_date, end_date FROM borrow INNER JOIN gamecollection ON borrow.gameID = gamecollection.gameID WHERE borrowerID = ".$_SESSION["username"]." AND Now() < end_date ORDER BY end_date";
             try {
                 $results = $conn->query($query);
 
@@ -65,14 +65,23 @@ if(!isset($_SESSION['username'])){
                 } else {
 
                     print "<table id='results'>\n";
-                    echo "<th>Game Title</th><th>Borrower ID</th><th>Copy ID</th><th>Loan Start Date</th><th>Loan End Date</th>";
+                    echo "<th>Game Title</th><th>Borrower ID</th><th>Copy ID</th><th>Loan Start Date</th><th>Loan End Date</th><th>Leave Feedback</th>";
                     foreach ($results as $row) {
                         echo "<tr>";
                         echo "<td>".$row["Title"]."</td>";
                         echo "<td>".$row["borrowerID"]."</td>";
                         echo "<td>".$row["copyID"]."</td>";
                         echo "<td>".$row["start_date"]."</td>";
-                        echo "<td>".$row["end_date"]."</td></tr>";
+                        echo "<td>".$row["end_date"]."</td>";
+                        echo "<td><form id='Feedback' action='feedback.php?borrowID=".$row["borrowID"]." method='post'>
+                                        <select name='feedbackRating'>
+                                            <option value = 1> 1 </option>
+                                            <option value = 2> 2 </option>
+                                            <option value = 3> 3 </option>
+                                            <option value = 4> 4 </option>
+                                            <option value = 5> 5 </option>
+                                        </select>
+                                        <button id='feedback' name='feedback' value='".$row["borrowID"]."'>Leave Feedback</button></form></td></tr>";
                     }
                     print "</table>\n";
                 }
