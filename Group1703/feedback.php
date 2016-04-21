@@ -15,12 +15,12 @@ $bID = $_GET['feedback'];
 $feedback = $_GET['feedbackRating'];
 
 
-$query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, '$bID', borrowerID, '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
+$query = "Insert into feedback (borrowID, borrowerID, feedbackScore) Select borrowerID, '$bID', '$feedback' FROM borrow WHERE borrow.borrowID = '$bID'";
 try {
     $results = $conn->query($query);
 
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-header("Location:home.php");
+//header("Location:home.php");
 ?>
