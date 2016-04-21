@@ -68,14 +68,10 @@ if(!isset($_SESSION['username'])){
                     echo "<th>Game Title</th><th>Loaner ID</th><th>Copy ID</th><th>Loan Start Date></th><th>Loan End Date</th>";
                     foreach ($results as $row) {
                         echo "<tr>";
-                        echo "<td>".$row["Title"]."</td></tr>";
-                        echo "<tr>";
-                        echo "<td>".$row["loanerID"]."</td></tr>";
-                        echo "<tr>";
-                        echo "<td>".$row["copyID"]."</td></tr>";
-                        echo "<tr>";
-                        echo "<td>".$row["start_date"]."</td></tr>";
-                        echo "<tr>";
+                        echo "<td>".$row["Title"]."</td>";
+                        echo "<td>".$row["loanerID"]."</td>";
+                        echo "<td>".$row["copyID"]."</td>";
+                        echo "<td>".$row["start_date"]."</td>";
                         echo "<td>".$row["end_date"]."</td></tr>";
                     }
                     print "</table>\n";
