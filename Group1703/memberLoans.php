@@ -65,7 +65,7 @@ if(!isset($_SESSION['username'])){
                 } else {
 
                     print "<table id='results'>\n";
-                    echo "<th>Game Title</th><th>Loaner ID</th><th>Copy ID</th><th>Loan Start Date></th><th>Loan End Date</th>";
+                    echo "<th>Game Title</th><th>Loaner ID</th><th>Copy ID</th><th>Loan Start Date</th><th>Loan End Date</th>";
                     foreach ($results as $row) {
                         echo "<tr>";
                         echo "<td>".$row["Title"]."</td>";
