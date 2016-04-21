@@ -72,7 +72,7 @@ if(!isset($_SESSION['username'])){
                         echo "<tr>";
                         echo "<td>".$row["loanerID"]."</td></tr>";
                         echo "<tr>";
-                        echo "<td>".$row["CopyID"]."</td></tr>";
+                        echo "<td>".$row["copyID"]."</td></tr>";
                         echo "<tr>";
                         echo "<td>".$row["start_date"]."</td></tr>";
                         echo "<tr>";
