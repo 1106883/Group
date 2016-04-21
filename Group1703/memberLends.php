@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){
                         echo "<td>".$row["copyID"]."</td>";
                         echo "<td>".$row["start_date"]."</td>";
                         echo "<td>".$row["end_date"]."</td>";
-                        echo "<td><form id='Feedback' action='feedback.php?borrowID=".$row["borrowID"]." method='post'>
+                        echo "<td><form id='Feedback' action='feedback.php?borrowID=".$row["borrowID"]."&borrowerID=".$row["borrowerID"]."' method='post'>
                                         <select name='feedbackRating'>
                                             <option value = 1> 1 </option>
                                             <option value = 2> 2 </option>
