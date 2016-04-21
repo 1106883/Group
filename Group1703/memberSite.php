@@ -129,6 +129,8 @@ if (!isset($_SESSION['username'])) {
                     <a href="addTitlePlatform.php">Add Title</a>
                     <br><br><br><br><br><br>
                     <h3>Your Loans</h3>
+                    <a href="memberLoans.php">Borrows</a>
+                    <a href="#">Lends</a>
 
                 </section>
             </main>
