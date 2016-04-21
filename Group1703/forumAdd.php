@@ -1,3 +1,8 @@
+<?session_start();
+if(!isset($_SESSION['username'])){
+    header("Location:home.php");
+}?>
+
 <!DOCTYPE html>
 
 <head>
@@ -53,7 +58,7 @@
                     <td><input id="postContent" name="postContent" type="text"/></td>
                 </tr>
                 </table>
-                    <input type="submit" vlaue="Post">
+                    <input type="submit" value="Post">
 
         </div>
         <br class="clearfix" />

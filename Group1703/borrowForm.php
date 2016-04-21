@@ -43,7 +43,7 @@ if(!isset($_SESSION['username'])){
                 <ul>
                     <li><a href="home.php">Homepage</a></li>
                     <li><a href="memberSite.php">Profile</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="forum.php">Forum</a></li>
                     <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input id="qsgo" type="submit"  value="Go"></li>
                 </ul>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){
                 $title = $_GET['borrow'];
 
 
-                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%'";
+                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%' AND status = 'Available'";
                 try {
                     $results = $conn->query($query);
 
