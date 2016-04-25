@@ -56,8 +56,6 @@ if(!isset($_SESSION['username'])){
             <div id='resultsdiv'>
                 <?php
 
-                //header("Location:results.html");
-
                 error_reporting(-1);
 
                 $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
@@ -73,7 +71,9 @@ if(!isset($_SESSION['username'])){
                 $title = $_GET['borrow'];
 
 
-                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID WHERE gameCollection.title LIKE '%$title%' AND status = 'Available'";
+                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns
+                          INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID
+                          WHERE gameCollection.title LIKE '%$title%' AND status = 'Available'";
                 try {
                     $results = $conn->query($query);
 

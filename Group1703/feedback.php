@@ -23,5 +23,5 @@ $conn->exec($sql);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-//header("Location:home.php");
+header("Location:home.php");
 ?>
