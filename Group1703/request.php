@@ -35,10 +35,10 @@ if(!isset($_SESSION['username'])){
         <div id="menu">
             <form action="../../../AzureTest-master%20(4)/AzureTest-master/Group1703/results.php" method="post">
                 <ul>
-                    <li><a href="../../../AzureTest-master%20(4)/AzureTest-master/Group1703/home.php">Homepage</a></li>
-                    <li><a href="../../../AzureTest-master%20(4)/AzureTest-master/Group1703/memberSite.php">Profile</a></li>
-                    <li><a href="../../../AzureTest-master%20(4)/AzureTest-master/Group1703/forum.php">Forum</a></li>
-                    <li><a href="../../../AzureTest-master%20(4)/AzureTest-master/Group1703/Search.php">Search</a></li>
+                    <li><a href="home.php">Homepage</a></li>
+                    <li><a href="memberSite.php">Profile</a></li>
+                    <li><a href="forum.php">Forum</a></li>
+                    <li><a href="Search.php">Search</a></li>
                     <li><input id="qsearch" name="qsearch" type="text" placeholder="I want to borrow..."/><input id="qsgo" type="submit"  value="Go"></li>
                 </ul>
             </form>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['username'])){
 
                 $sql = "INSERT INTO borrow (borrowerID, loanerID, gameID, copyID, start_date, end_date)
                             SELECT ".$_SESSION['username'].", studentID, gameID, '$copy', '$sdate', '$edate'
-                            From owns Where copyID = $copy ";
+                            From owns Where copyID = $copy";
 
                 $conn->exec($sql);
 
