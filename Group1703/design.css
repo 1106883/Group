@@ -35,6 +35,17 @@ br.clearfix {
 	clear: both;
 }
 
+button {
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+	font-family: Oswald, sans-serif;
+	color: #FFFFFF;
+	padding: 2px 4px 2px 4px;
+	background-color: darkorchid;
+	text-shadow: 0px 1px 1px #590200;
+	border-radius: 5px;
+}
+
 h1{
 	
 	font-weight: normal;
