@@ -1,7 +1,4 @@
-<?session_start();
-if(!isset($_SESSION['username'])){
-    header("Location:home.php");
-}?>
+<?php session_start(); ?>
 
 <html>
 
@@ -56,6 +53,8 @@ if(!isset($_SESSION['username'])){
             <div id='resultsdiv'>
                 <?php
 
+                //header("Location:results.html");
+
                 error_reporting(-1);
 
                 $dsn = "mysql:host=eu-cdbr-azure-north-d.cloudapp.net;dbname=db1510646_gameshare";
@@ -68,32 +67,30 @@ if(!isset($_SESSION['username'])){
                     echo "Connection failed: " . $e->getMessage();
                 }
 
-                $title = $_GET['borrow'];
+                $query = "";
+
+                $stuID = $_GET['stu'];
+                if (!isset($stu)) {
+                    $year = $_SESSION['username'];
+                }
 
 
-                $query = "SELECT gameCollection.Title, gameCollection.Platform, owns.studentID, owns.copyID FROM owns
-                          INNER JOIN gameCollection ON owns.GameID = gameCollection.gameID
-                          WHERE gameCollection.title LIKE '%$title%' AND status = 'Available'";
+                $query = "SELECT * FROM members WHERE studentID = '$stuID'";
                 try {
                     $results = $conn->query($query);
 
                     if ($results->rowcount() == 0) {
-                        echo "We're sorry, but the game you have requested is currently on loan <br />";
+                        echo "no games found <br />";
                     } else {
 
-                        print "<table id='borrowTable'>\n";
-                        echo "<th>Title</th><th>Platform</th><th>Student ID</th><th>Copy ID</th><th>Start Date</th><th>End Date</th><th>Borrow</th>";
+                        print "<table id='results'>\n";
+                        echo "<th>firstName</th><th>lastName</th><th>studentID</th><th>feedbackScore</th>";
                         foreach ($results as $row) {
                             echo "<tr>";
-                            echo "<td>" . $row["Title"] . "</td>";
-                            echo "<td>" . $row['Platform'] . "</td>";
-                            echo "<td><a href='feedbackRating.php?stu=" . $row["studentID"] . "'>" . $row["studentID"] . "</a></td>";
-                            echo "<td>" . $row["copyID"] . "</td>";
-                            echo "<form id='borrow' action='request.php?copy=".$row["copyID"]."' method='POST'>";
-                            echo "<td><input type='text' placeholder='yyyy-mm-dd' id='sdate' name='sdate'></td>";
-                            echo "<td><input type='text' placeholder='yyyy-mm-dd' id='edate' name='edate'></td>";
-                            echo "<td><button id='Request' name='Borrow' value='".$row['copyID']."'>Request</button></form></td>";
-
+                            echo "<td>" . $row["firstName"] . "</td>";
+                            echo "<td>" . $row["lastName"] . "</td>";
+                            echo "<td>" . $row["studentID"] . "</td>";
+                            echo "<td>" . $row["feedbackScore"] . "</td>";
                         }
                         print "</table>\n";
                     }
